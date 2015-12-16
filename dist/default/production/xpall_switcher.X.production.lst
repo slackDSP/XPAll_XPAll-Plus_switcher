@@ -1,0 +1,1259 @@
+
+
+Microchip Technology PIC LITE Macro Assembler V1.34 build -361300703 
+                                                                                               Mon Nov  9 20:38:18 2015
+
+Microchip Technology Omniscient Code Generator (Lite mode) build 201502162209
+     1                           	processor	16F636
+     2                           	opt	pw 120
+     3                           	opt	lm
+     4                           	psect	idataEEDATA,global,class=EEDATA,space=3,delta=2
+     5                           	psect	strings,global,class=STRING,delta=2
+     6                           	psect	cinit,global,class=CODE,merge=1,delta=2
+     7                           	psect	bssEEDATA,global,class=EEDATA,space=3,delta=2
+     8                           	psect	dataEEDATA,global,class=EEDATA,space=3,delta=2
+     9                           	psect	bssCOMMON,global,class=COMMON,space=1,delta=1
+    10                           	psect	bssBANK0,global,class=BANK0,space=1,delta=1
+    11                           	psect	inittext,global,class=CODE,delta=2
+    12                           	psect	cstackCOMMON,global,class=COMMON,space=1,delta=1
+    13                           	psect	cstackBANK0,global,class=BANK0,space=1,delta=1
+    14                           	psect	maintext,global,class=CODE,split=1,delta=2
+    15                           	psect	text1,local,class=CODE,merge=1,delta=2
+    16                           	psect	text2,local,class=CODE,merge=1,delta=2
+    17                           	psect	text3,local,class=CODE,merge=1,delta=2
+    18                           	psect	text4,local,class=CODE,merge=1,delta=2
+    19                           	psect	text5,local,class=CODE,merge=1,delta=2
+    20                           	dabs	1,0x7E,2
+    21  0000                     	;# 
+    22  0001                     	;# 
+    23  0002                     	;# 
+    24  0003                     	;# 
+    25  0004                     	;# 
+    26  0005                     	;# 
+    27  0007                     	;# 
+    28  000A                     	;# 
+    29  000B                     	;# 
+    30  000C                     	;# 
+    31  000E                     	;# 
+    32  000E                     	;# 
+    33  000F                     	;# 
+    34  0010                     	;# 
+    35  0018                     	;# 
+    36  0019                     	;# 
+    37  001A                     	;# 
+    38  0081                     	;# 
+    39  0085                     	;# 
+    40  0087                     	;# 
+    41  008C                     	;# 
+    42  008E                     	;# 
+    43  008F                     	;# 
+    44  0090                     	;# 
+    45  0094                     	;# 
+    46  0095                     	;# 
+    47  0096                     	;# 
+    48  0097                     	;# 
+    49  0099                     	;# 
+    50  009A                     	;# 
+    51  009A                     	;# 
+    52  009B                     	;# 
+    53  009C                     	;# 
+    54  009D                     	;# 
+    55  0110                     	;# 
+    56  0111                     	;# 
+    57  0112                     	;# 
+    58  0113                     	;# 
+    59  0114                     	;# 
+    60                           
+    61                           	psect	idataEEDATA
+    62  0000                     __pidataEEDATA:	
+    63  0000                     _copyright:	
+    64                           ;initializer for _copyright
+    65                           
+    66  0000  0058               	db	88
+    67  0001  0050               	db	80
+    68  0002  0041               	db	65
+    69  0003  006C               	db	108
+    70  0004  006C               	db	108
+    71  0005  002F               	db	47
+    72  0006  0058               	db	88
+    73  0007  0050               	db	80
+    74  0008  0041               	db	65
+    75  0009  006C               	db	108
+    76  000A  006C               	db	108
+    77  000B  002B               	db	43
+    78  000C  0020               	db	32
+    79  000D  006D               	db	109
+    80  000E  006F               	db	111
+    81  000F  0064               	db	100
+    82  0010  0065               	db	101
+    83  0011  0020               	db	32
+    84  0012  0073               	db	115
+    85  0013  0065               	db	101
+    86  0014  006C               	db	108
+    87  0015  0065               	db	101
+    88  0016  0063               	db	99
+    89  0017  0074               	db	116
+    90  0018  006F               	db	111
+    91  0019  0072               	db	114
+    92  001A  0020               	db	32
+    93  001B  0043               	db	67
+    94  001C  006F               	db	111
+    95  001D  0070               	db	112
+    96  001E  0079               	db	121
+    97  001F  0072               	db	114
+    98  0020  0069               	db	105
+    99  0021  0067               	db	103
+   100  0022  0068               	db	104
+   101  0023  0074               	db	116
+   102  0024  0020               	db	32
+   103  0025  0032               	db	50
+   104  0026  0030               	db	48
+   105  0027  0031               	db	49
+   106  0028  0035               	db	53
+   107  0029  0020               	db	32
+   108  002A  0049               	db	73
+   109  002B  0061               	db	97
+   110  002C  006E               	db	110
+   111  002D  0020               	db	32
+   112  002E  004D               	db	77
+   113  002F  0061               	db	97
+   114  0030  006C               	db	108
+   115  0031  0074               	db	116
+   116  0032  0062               	db	98
+   117  0033  0079               	db	121
+   118  0034  0000               	db	0
+   119                           
+   120                           	psect	strings
+   121  0001                     __pstrings:	
+   122  0001                     stringtab:	
+   123  0001                     __stringtab:	
+   124  0001                     stringcode:	
+   125                           ;	String table - string pointers are 1 byte each
+   126                           
+   127  0001                     stringdir:	
+   128  0001  3000               	movlw	high stringdir
+   129  0002  008A               	movwf	10
+   130  0003  0804               	movf	4,w
+   131  0004  0A84               	incf	4,f
+   132  0005  0782               	addwf	2,f
+   133  0006                     __stringbase:	
+   134  0006  3400               	retlw	0
+   135  0007                     __end_of__stringtab:	
+   136  0007                     set_mode@eeprom_select:	
+   137  0007  340E               	retlw	14
+   138  0008  340D               	retlw	13
+   139  0009  340B               	retlw	11
+   140  000A  3407               	retlw	7
+   141  000B                     __end_ofset_mode@eeprom_select:	
+   142  000B                     set_mode@led_select:	
+   143  000B  3406               	retlw	6
+   144  000C  3405               	retlw	5
+   145  000D  3404               	retlw	4
+   146  000E  3403               	retlw	3
+   147  000F                     __end_ofset_mode@led_select:	
+   148  000F                     set_mode@mode_select:	
+   149  000F  3401               	retlw	1
+   150  0010  340E               	retlw	14
+   151  0011  340A               	retlw	10
+   152  0012  3404               	retlw	4
+   153  0013                     __end_ofset_mode@mode_select:	
+   154  0019                     _CMCON0bits	set	25
+   155  0005                     _PORTA	set	5
+   156  0007                     _PORTC	set	7
+   157  0018                     _CARRY	set	24
+   158  005F                     _GIE	set	95
+   159  002A                     _RA2	set	42
+   160  002C                     _RA4	set	44
+   161  002D                     _RA5	set	45
+   162  009B                     _EEADR	set	155
+   163  009C                     _EECON1	set	156
+   164  009D                     _EECON2	set	157
+   165  009A                     _EEDATA	set	154
+   166  0085                     _TRISA	set	133
+   167  0087                     _TRISC	set	135
+   168  04E0                     _RD	set	1248
+   169  042D                     _TRISA5	set	1069
+   170  04E1                     _WR	set	1249
+   171  04E2                     _WREN	set	1250
+   172                           
+   173                           ; #config settings
+   174  0000                     
+   175                           	psect	cinit
+   176  07F7                     start_initialization:	
+   177  07F7                     __initialization:	
+   178                           
+   179                           ; Clear objects allocated to COMMON
+   180  07F7  01F8               	clrf	__pbssCOMMON& (0+127)
+   181  07F8  01F9               	clrf	(__pbssCOMMON+1)& (0+127)
+   182  07F9  01FA               	clrf	(__pbssCOMMON+2)& (0+127)
+   183  07FA  01FB               	clrf	(__pbssCOMMON+3)& (0+127)
+   184  07FB  01FC               	clrf	(__pbssCOMMON+4)& (0+127)
+   185                           
+   186                           ; Clear objects allocated to BANK0
+   187  07FC  01A8               	clrf	__pbssBANK0& (0+127)
+   188  07FD  01A9               	clrf	(__pbssBANK0+1)& (0+127)
+   189  07FE                     end_of_initialization:	
+   190                           ;End of C runtime variable initialization code
+   191                           
+   192  07FE                     __end_of__initialization:	
+   193  07FE  0183               	clrf	3
+   194  07FF  2F65               	ljmp	_main	;jump to C main() function
+   195                           
+   196                           	psect	bssEEDATA
+   197  0035                     __pbssEEDATA:	
+   198  0035                     _power_on_mode:	
+   199  0035  0000               	db	0
+   200                           
+   201                           	psect	dataEEDATA
+   202  0000                     __pdataEEDATA:	
+   203                           
+   204                           	psect	bssCOMMON
+   205  0078                     __pbssCOMMON:	
+   206  0078                     main@debounce:	
+   207  0078                     	ds	2
+   208  007A                     main@mode:	
+   209  007A                     	ds	1
+   210  007B                     main@old_mode:	
+   211  007B                     	ds	1
+   212  007C                     main@pressed:	
+   213  007C                     	ds	1
+   214                           
+   215                           	psect	bssBANK0
+   216  0028                     __pbssBANK0:	
+   217  0028                     main@timeout:	
+   218  0028                     	ds	2
+   219                           
+   220                           	psect	inittext
+   221  06B3                     init_fetch0:	
+   222                           ;	Called with low address in FSR and high address in W
+   223                           
+   224  06B3  087E               	movf	126,w
+   225  06B4  008A               	movwf	10
+   226  06B5  087F               	movf	127,w
+   227  06B6  0082               	movwf	2
+   228  06B7                     init_ram0:	
+   229                           ;Called with:
+   230                           ;	high address of idata address in btemp 
+   231                           ;	low address of idata address in btemp+1 
+   232                           ;	low address of data in FSR
+   233                           ;	high address + 1 of data in btemp-1
+   234                           
+   235  06B7  26B3               	fcall	init_fetch0
+   236  06B8  0080               	movwf	0
+   237  06B9  0A84               	incf	4,f
+   238  06BA  0804               	movf	4,w
+   239  06BB  067D               	xorwf	125,w
+   240  06BC  1903               	btfsc	3,2
+   241  06BD  3400               	retlw	0
+   242  06BE  0AFF               	incf	127,f
+   243  06BF  1903               	btfsc	3,2
+   244  06C0  0AFE               	incf	126,f
+   245  06C1  2EB7               	goto	init_ram0
+   246                           
+   247                           	psect	cstackCOMMON
+   248  0070                     __pcstackCOMMON:	
+   249  0070                     ?_set_mode:	
+   250  0070                     ??_set_mode:	
+   251                           ; 0 bytes @ 0x0
+   252                           
+   253  0070                     ?_main:	
+   254                           ; 0 bytes @ 0x0
+   255                           
+   256  0070                     ?_eecpymem:	
+   257                           ; 0 bytes @ 0x0
+   258                           
+   259  0070                     ?_memcpyee:	
+   260                           ; 0 bytes @ 0x0
+   261                           
+   262  0070                     ?___eetoc:	
+   263                           ; 0 bytes @ 0x0
+   264                           
+   265  0070                     eecpymem@from:	
+   266                           ; 1 bytes @ 0x0
+   267                           
+   268  0070                     memcpyee@from:	
+   269                           ; 1 bytes @ 0x0
+   270                           
+   271                           
+   272                           ; 1 bytes @ 0x0
+   273  0070                     	ds	1
+   274  0071                     eecpymem@size:	
+   275  0071                     memcpyee@size:	
+   276                           ; 1 bytes @ 0x1
+   277                           
+   278                           
+   279                           ; 1 bytes @ 0x1
+   280  0071                     	ds	1
+   281  0072                     ??_eecpymem:	
+   282  0072                     ??_memcpyee:	
+   283                           ; 0 bytes @ 0x2
+   284                           
+   285  0072                     set_mode@s_mode:	
+   286                           ; 0 bytes @ 0x2
+   287                           
+   288                           
+   289                           ; 1 bytes @ 0x2
+   290  0072                     	ds	1
+   291  0073                     eecpymem@cp:	
+   292  0073                     memcpyee@ptr:	
+   293                           ; 1 bytes @ 0x3
+   294                           
+   295                           
+   296                           ; 1 bytes @ 0x3
+   297  0073                     	ds	1
+   298  0074                     eecpymem@to:	
+   299  0074                     memcpyee@to:	
+   300                           ; 1 bytes @ 0x4
+   301                           
+   302                           
+   303                           ; 1 bytes @ 0x4
+   304  0074                     	ds	1
+   305  0075                     ??___eetoc:	
+   306  0075                     ?___ctoee:	
+   307                           ; 0 bytes @ 0x5
+   308                           
+   309  0075                     ___ctoee@data:	
+   310                           ; 1 bytes @ 0x5
+   311                           
+   312                           
+   313                           ; 1 bytes @ 0x5
+   314  0075                     	ds	1
+   315  0076                     ??___ctoee:	
+   316  0076                     ___eetoc@addr:	
+   317                           ; 0 bytes @ 0x6
+   318                           
+   319                           
+   320                           ; 1 bytes @ 0x6
+   321  0076                     	ds	1
+   322  0077                     ___eetoc@data:	
+   323  0077                     ___ctoee@addr:	
+   324                           ; 1 bytes @ 0x7
+   325                           
+   326                           
+   327                           ; 1 bytes @ 0x7
+   328  0077                     	ds	1
+   329                           
+   330                           	psect	cstackBANK0
+   331  0020                     __pcstackBANK0:	
+   332  0020                     ??_main:	
+   333                           
+   334                           ; 0 bytes @ 0x0
+   335  0020                     	ds	8
+   336                           
+   337                           	psect	maintext
+   338  0765                     __pmaintext:	
+   339 ;;
+   340 ;;Main: autosize = 0, tempsize = 8, incstack = 0, save=0
+   341 ;;
+   342 ;; *************** function _main *****************
+   343 ;; Defined at:
+   344 ;;		line 55 in file "xpall_switcher_main.c"
+   345 ;; Parameters:    Size  Location     Type
+   346 ;;		None
+   347 ;; Auto vars:     Size  Location     Type
+   348 ;;		None
+   349 ;; Return value:  Size  Location     Type
+   350 ;;		None               void
+   351 ;; Registers used:
+   352 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+   353 ;; Tracked objects:
+   354 ;;		On entry : B00/0
+   355 ;;		On exit  : 0/0
+   356 ;;		Unchanged: 0/0
+   357 ;; Data sizes:     COMMON   BANK0   BANK1
+   358 ;;      Params:         0       0       0
+   359 ;;      Locals:         0       0       0
+   360 ;;      Temps:          0       8       0
+   361 ;;      Totals:         0       8       0
+   362 ;;Total ram usage:        8 bytes
+   363 ;; Hardware stack levels required when called:    2
+   364 ;; This function calls:
+   365 ;;		___ctoee
+   366 ;;		___eetoc
+   367 ;;		_set_mode
+   368 ;; This function is called by:
+   369 ;;		Startup code after reset
+   370 ;; This function uses a non-reentrant model
+   371 ;;
+   372                           
+   373                           
+   374                           ;psect for function _main
+   375  0765                     _main:	
+   376                           
+   377                           ;xpall_switcher_main.c: 57: static char pressed = 0;
+   378                           ;xpall_switcher_main.c: 58: static char mode = 0;
+   379                           ;xpall_switcher_main.c: 59: static char old_mode = 0;
+   380                           ;xpall_switcher_main.c: 60: static unsigned int debounce;
+   381                           ;xpall_switcher_main.c: 61: static unsigned int timeout;
+   382                           ;xpall_switcher_main.c: 63: CMCON0bits.CM = 7;
+   383                           
+   384                           ;incstack = 0
+   385                           ; Regs used in _main: [wreg-fsr0h+status,2+status,0+pclath+cstack]
+   386  0765  3007               	movlw	7
+   387  0766  1283               	bcf	3,5	;RP0=0, select bank0
+   388  0767  1303               	bcf	3,6	;RP1=0, select bank0
+   389  0768  0499               	iorwf	25,f	;volatile
+   390                           
+   391                           ;xpall_switcher_main.c: 64: TRISA = 0;
+   392  0769  1683               	bsf	3,5	;RP0=1, select bank1
+   393  076A  1303               	bcf	3,6	;RP1=0, select bank1
+   394  076B  0185               	clrf	5	;volatile
+   395                           
+   396                           ;xpall_switcher_main.c: 65: TRISC = 0;
+   397  076C  0187               	clrf	7	;volatile
+   398                           
+   399                           ;xpall_switcher_main.c: 66: TRISA5 = 1;
+   400  076D  1685               	bsf	5,5	;volatile
+   401                           
+   402                           ;xpall_switcher_main.c: 67: PORTA = 0;
+   403  076E  1283               	bcf	3,5	;RP0=0, select bank0
+   404  076F  1303               	bcf	3,6	;RP1=0, select bank0
+   405  0770  0185               	clrf	5	;volatile
+   406                           
+   407                           ;xpall_switcher_main.c: 68: PORTC = 0;
+   408  0771  0187               	clrf	7	;volatile
+   409                           
+   410                           ;xpall_switcher_main.c: 70: if (power_on_mode > 3)
+   411  0772  3035               	movlw	(low _power_on_mode)& (0+255)
+   412  0773  26A8               	fcall	___eetoc
+   413  0774  1283               	bcf	3,5	;RP0=0, select bank0
+   414  0775  1303               	bcf	3,6	;RP1=0, select bank0
+   415  0776  00A0               	movwf	??_main
+   416  0777  3004               	movlw	4
+   417  0778  0220               	subwf	??_main,w
+   418  0779  1C03               	skipc
+   419  077A  2F7D               	goto	l721
+   420                           
+   421                           ;xpall_switcher_main.c: 71: mode = 0;
+   422  077B  01FA               	clrf	main@mode
+   423  077C  2F84               	goto	l40
+   424  077D                     l721:	
+   425                           
+   426                           ;xpall_switcher_main.c: 72: else
+   427                           ;xpall_switcher_main.c: 73: mode = power_on_mode;
+   428  077D  3035               	movlw	(low _power_on_mode)& (0+255)
+   429  077E  26A8               	fcall	___eetoc
+   430  077F  1283               	bcf	3,5	;RP0=0, select bank0
+   431  0780  1303               	bcf	3,6	;RP1=0, select bank0
+   432  0781  00A0               	movwf	??_main
+   433  0782  0820               	movf	??_main,w
+   434  0783  00FA               	movwf	main@mode
+   435  0784                     l40:	
+   436                           
+   437                           ;xpall_switcher_main.c: 75: set_mode(mode);
+   438  0784  087A               	movf	main@mode,w
+   439  0785  2722               	fcall	_set_mode
+   440                           
+   441                           ;xpall_switcher_main.c: 77: _delay((unsigned long)((100)*(4000000/4000.0)));
+   442  0786  3082               	movlw	130
+   443  0787  1283               	bcf	3,5	;RP0=0, select bank0
+   444  0788  1303               	bcf	3,6	;RP1=0, select bank0
+   445  0789  00A1               	movwf	??_main+1
+   446  078A  30DD               	movlw	221
+   447  078B  00A0               	movwf	??_main
+   448  078C                     u397:	
+   449  078C  0BA0               	decfsz	??_main,f
+   450  078D  2F8C               	goto	u397
+   451  078E  0BA1               	decfsz	??_main+1,f
+   452  078F  2F8C               	goto	u397
+   453  0790  2F91               	nop2
+   454  0791                     l747:	
+   455                           ;xpall_switcher_main.c: 81: while (!pressed) {
+   456                           
+   457                           ;xpall_switcher_main.c: 79: for (;;) {
+   458                           
+   459  0791  087C               	movf	main@pressed,w
+   460  0792  1D03               	btfss	3,2
+   461  0793  2FE7               	goto	l749
+   462                           
+   463                           ;xpall_switcher_main.c: 82: debounce = (debounce << 1 | RA5 | 57344);
+   464  0794  1003               	clrc
+   465  0795  1283               	bcf	3,5	;RP0=0, select bank0
+   466  0796  1303               	bcf	3,6	;RP1=0, select bank0
+   467  0797  1A85               	btfsc	5,5	;volatile
+   468  0798  1403               	setc
+   469  0799  3000               	movlw	0
+   470  079A  1803               	skipnc
+   471  079B  3001               	movlw	1
+   472  079C  00A0               	movwf	??_main
+   473  079D  01A1               	clrf	??_main+1
+   474  079E  0879               	movf	main@debounce+1,w
+   475  079F  00A3               	movwf	??_main+3
+   476  07A0  0878               	movf	main@debounce,w
+   477  07A1  00A2               	movwf	??_main+2
+   478  07A2  1003               	clrc
+   479  07A3  0DA2               	rlf	??_main+2,f
+   480  07A4  0DA3               	rlf	??_main+3,f
+   481  07A5  0820               	movf	??_main,w
+   482  07A6  0422               	iorwf	??_main+2,w
+   483  07A7  00A4               	movwf	??_main+4
+   484  07A8  0821               	movf	??_main+1,w
+   485  07A9  0423               	iorwf	??_main+3,w
+   486  07AA  00A5               	movwf	??_main+5
+   487  07AB  3000               	movlw	0
+   488  07AC  0424               	iorwf	??_main+4,w
+   489  07AD  00A6               	movwf	??_main+6
+   490  07AE  30E0               	movlw	224
+   491  07AF  0425               	iorwf	??_main+5,w
+   492  07B0  00A7               	movwf	??_main+7
+   493  07B1  0826               	movf	??_main+6,w
+   494  07B2  00F8               	movwf	main@debounce
+   495  07B3  0827               	movf	??_main+7,w
+   496  07B4  00F9               	movwf	main@debounce+1
+   497                           
+   498                           ;xpall_switcher_main.c: 83: if (debounce == 61440)
+   499  07B5  30F0               	movlw	240
+   500  07B6  0679               	xorwf	main@debounce+1,w
+   501  07B7  0478               	iorwf	main@debounce,w
+   502  07B8  1D03               	btfss	3,2
+   503  07B9  2FBC               	goto	l729
+   504                           
+   505                           ;xpall_switcher_main.c: 84: pressed = 1;
+   506  07BA  01FC               	clrf	main@pressed
+   507  07BB  0AFC               	incf	main@pressed,f
+   508  07BC                     l729:	
+   509                           
+   510                           ;xpall_switcher_main.c: 86: if (debounce == 57344)
+   511  07BC  30E0               	movlw	224
+   512  07BD  0679               	xorwf	main@debounce+1,w
+   513  07BE  0478               	iorwf	main@debounce,w
+   514  07BF  1D03               	btfss	3,2
+   515  07C0  2FC8               	goto	l733
+   516                           
+   517                           ;xpall_switcher_main.c: 87: timeout++;
+   518  07C1  3001               	movlw	1
+   519  07C2  07A8               	addwf	main@timeout,f
+   520  07C3  1803               	skipnc
+   521  07C4  0AA9               	incf	main@timeout+1,f
+   522  07C5  3000               	movlw	0
+   523  07C6  07A9               	addwf	main@timeout+1,f
+   524  07C7  2FCA               	goto	l735
+   525  07C8                     l733:	
+   526                           
+   527                           ;xpall_switcher_main.c: 88: else timeout = 0;
+   528  07C8  01A8               	clrf	main@timeout
+   529  07C9  01A9               	clrf	main@timeout+1
+   530  07CA                     l735:	
+   531                           
+   532                           ;xpall_switcher_main.c: 90: if (timeout > 9000) {
+   533  07CA  3023               	movlw	35
+   534  07CB  0229               	subwf	main@timeout+1,w
+   535  07CC  3029               	movlw	41
+   536  07CD  1903               	skipnz
+   537  07CE  0228               	subwf	main@timeout,w
+   538  07CF  1C03               	skipc
+   539  07D0  2FE1               	goto	l745
+   540                           
+   541                           ;xpall_switcher_main.c: 91: mode = old_mode;
+   542  07D1  087B               	movf	main@old_mode,w
+   543  07D2  00A0               	movwf	??_main
+   544  07D3  0820               	movf	??_main,w
+   545  07D4  00FA               	movwf	main@mode
+   546                           
+   547                           ;xpall_switcher_main.c: 92: power_on_mode = mode;
+   548  07D5  087A               	movf	main@mode,w
+   549  07D6  00A0               	movwf	??_main
+   550  07D7  0820               	movf	??_main,w
+   551  07D8  00F5               	movwf	___ctoee@data
+   552  07D9  3035               	movlw	(low _power_on_mode)& (0+255)
+   553  07DA  269E               	fcall	___ctoee
+   554                           
+   555                           ;xpall_switcher_main.c: 93: set_mode(mode);
+   556  07DB  087A               	movf	main@mode,w
+   557  07DC  2722               	fcall	_set_mode
+   558                           
+   559                           ;xpall_switcher_main.c: 94: timeout = 0;
+   560  07DD  1283               	bcf	3,5	;RP0=0, select bank0
+   561  07DE  1303               	bcf	3,6	;RP1=0, select bank0
+   562  07DF  01A8               	clrf	main@timeout
+   563  07E0  01A9               	clrf	main@timeout+1
+   564  07E1                     l745:	
+   565                           
+   566                           ;xpall_switcher_main.c: 96: }
+   567                           ;xpall_switcher_main.c: 98: _delay((unsigned long)((200)*(4000000/4000000.0)));
+   568  07E1  3042               	movlw	66
+   569  07E2  00A0               	movwf	??_main
+   570  07E3                     u407:	
+   571  07E3  0BA0               	decfsz	??_main,f
+   572  07E4  2FE3               	goto	u407
+   573  07E5  0000               	nop
+   574  07E6  2F91               	goto	l747
+   575  07E7                     l749:	
+   576                           
+   577                           ;xpall_switcher_main.c: 99: }
+   578                           ;xpall_switcher_main.c: 101: pressed = 0;
+   579  07E7  01FC               	clrf	main@pressed
+   580                           
+   581                           ;xpall_switcher_main.c: 102: old_mode = mode;
+   582  07E8  087A               	movf	main@mode,w
+   583  07E9  1283               	bcf	3,5	;RP0=0, select bank0
+   584  07EA  1303               	bcf	3,6	;RP1=0, select bank0
+   585  07EB  00A0               	movwf	??_main
+   586  07EC  0820               	movf	??_main,w
+   587  07ED  00FB               	movwf	main@old_mode
+   588                           
+   589                           ;xpall_switcher_main.c: 103: mode = (mode + 1) & 3;
+   590  07EE  087A               	movf	main@mode,w
+   591  07EF  3E01               	addlw	1
+   592  07F0  3903               	andlw	3
+   593  07F1  00A0               	movwf	??_main
+   594  07F2  0820               	movf	??_main,w
+   595  07F3  00FA               	movwf	main@mode
+   596                           
+   597                           ;xpall_switcher_main.c: 105: set_mode(mode);
+   598  07F4  087A               	movf	main@mode,w
+   599  07F5  2722               	fcall	_set_mode
+   600                           
+   601                           ;xpall_switcher_main.c: 107: }
+   602  07F6  2F91               	goto	l747
+   603  07F7                     __end_of_main:	
+   604                           
+   605                           	psect	text1
+   606  0722                     __ptext1:	
+   607 ;; *************** function _set_mode *****************
+   608 ;; Defined at:
+   609 ;;		line 110 in file "xpall_switcher_main.c"
+   610 ;; Parameters:    Size  Location     Type
+   611 ;;  s_mode          1    wreg     unsigned char 
+   612 ;; Auto vars:     Size  Location     Type
+   613 ;;  s_mode          1    2[COMMON] unsigned char 
+   614 ;; Return value:  Size  Location     Type
+   615 ;;		None               void
+   616 ;; Registers used:
+   617 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath
+   618 ;; Tracked objects:
+   619 ;;		On entry : 0/0
+   620 ;;		On exit  : 0/0
+   621 ;;		Unchanged: 0/0
+   622 ;; Data sizes:     COMMON   BANK0   BANK1
+   623 ;;      Params:         0       0       0
+   624 ;;      Locals:         1       0       0
+   625 ;;      Temps:          2       0       0
+   626 ;;      Totals:         3       0       0
+   627 ;;Total ram usage:        3 bytes
+   628 ;; Hardware stack levels used:    2
+   629 ;; This function calls:
+   630 ;;		Nothing
+   631 ;; This function is called by:
+   632 ;;		_main
+   633 ;; This function uses a non-reentrant model
+   634 ;;
+   635                           
+   636                           
+   637                           ;psect for function _set_mode
+   638  0722                     _set_mode:	
+   639                           
+   640                           ;incstack = 0
+   641                           ; Regs used in _set_mode: [wreg-fsr0h+status,2+status,0+pclath]
+   642                           ;set_mode@s_mode stored from wreg
+   643  0722  00F2               	movwf	set_mode@s_mode
+   644                           
+   645                           ;xpall_switcher_main.c: 117: RA2 = mode_select[s_mode] & 1;
+   646  0723  0872               	movf	set_mode@s_mode,w
+   647  0724  3E09               	addlw	low ((set_mode@mode_select-__stringbase)| (0+32768))
+   648  0725  0084               	movwf	4
+   649  0726  2001               	fcall	stringdir
+   650  0727  00F0               	movwf	??_set_mode
+   651  0728  0C70               	rrf	??_set_mode,w
+   652  0729  1C03               	btfss	3,0
+   653  072A  2F2F               	goto	u280
+   654  072B  1283               	bcf	3,5	;RP0=0, select bank0
+   655  072C  1303               	bcf	3,6	;RP1=0, select bank0
+   656  072D  1505               	bsf	5,2	;volatile
+   657  072E  2F32               	goto	u294
+   658  072F                     u280:	
+   659  072F  1283               	bcf	3,5	;RP0=0, select bank0
+   660  0730  1303               	bcf	3,6	;RP1=0, select bank0
+   661  0731  1105               	bcf	5,2	;volatile
+   662  0732                     u294:	
+   663                           
+   664                           ;xpall_switcher_main.c: 118: PORTC = (mode_select[s_mode] >> 1) | (led_select[s_mode] <<
+      +                           3);
+   665  0732  0872               	movf	set_mode@s_mode,w
+   666  0733  3E05               	addlw	low ((set_mode@led_select-__stringbase)| (0+32768))
+   667  0734  0084               	movwf	4
+   668  0735  2001               	fcall	stringdir
+   669  0736  00F0               	movwf	??_set_mode
+   670  0737  3003               	movlw	3
+   671  0738                     u305:	
+   672  0738  1003               	clrc
+   673  0739  0DF0               	rlf	??_set_mode,f
+   674  073A  3EFF               	addlw	-1
+   675  073B  1D03               	skipz
+   676  073C  2F38               	goto	u305
+   677  073D  0872               	movf	set_mode@s_mode,w
+   678  073E  3E09               	addlw	low ((set_mode@mode_select-__stringbase)| (0+32768))
+   679  073F  2F47               	goto	L2
+   680  0740                     u335:	
+   681                           ;xpall_switcher_main.c: 121: PORTC = (eeprom_select[s_mode] >> 1) | (led_select[s_mode] 
+      +                          << 3);
+   682                           
+   683                           ;xpall_switcher_main.c: 120: RA2 = eeprom_select[s_mode] & 1;
+   684                           
+   685                           ;xpall_switcher_main.c: 119: } else {
+   686                           
+   687  0740  1003               	clrc
+   688  0741  0DF0               	rlf	??_set_mode,f
+   689  0742  3EFF               	addlw	-1
+   690  0743  1D03               	skipz
+   691  0744  2F40               	goto	u335
+   692  0745  0872               	movf	set_mode@s_mode,w
+   693  0746  3E01               	addlw	low ((set_mode@eeprom_select-__stringbase)| (0+32768))
+   694  0747                     L2:	
+   695  0747  0084               	movwf	4
+   696  0748  2001               	fcall	stringdir
+   697  0749  00F1               	movwf	??_set_mode+1
+   698  074A  1003               	clrc
+   699  074B  0C71               	rrf	??_set_mode+1,w
+   700  074C  0470               	iorwf	??_set_mode,w
+   701  074D  0087               	movwf	7	;volatile
+   702                           
+   703                           ;xpall_switcher_main.c: 122: }
+   704                           ;xpall_switcher_main.c: 124: _delay((unsigned long)((5)*(4000000/4000.0)));
+   705  074E  3007               	movlw	7
+   706  074F  00F1               	movwf	??_set_mode+1
+   707  0750  307D               	movlw	125
+   708  0751  00F0               	movwf	??_set_mode
+   709  0752                     u417:	
+   710  0752  0BF0               	decfsz	??_set_mode,f
+   711  0753  2F52               	goto	u417
+   712  0754  0BF1               	decfsz	??_set_mode+1,f
+   713  0755  2F52               	goto	u417
+   714                           
+   715                           ;xpall_switcher_main.c: 125: RA4 = 0;
+   716  0756  1283               	bcf	3,5	;RP0=0, select bank0
+   717  0757  1303               	bcf	3,6	;RP1=0, select bank0
+   718  0758  1205               	bcf	5,4	;volatile
+   719                           
+   720                           ;xpall_switcher_main.c: 126: _delay((unsigned long)((5)*(4000000/4000.0)));
+   721  0759  3007               	movlw	7
+   722  075A  00F1               	movwf	??_set_mode+1
+   723  075B  307D               	movlw	125
+   724  075C  00F0               	movwf	??_set_mode
+   725  075D                     u427:	
+   726  075D  0BF0               	decfsz	??_set_mode,f
+   727  075E  2F5D               	goto	u427
+   728  075F  0BF1               	decfsz	??_set_mode+1,f
+   729  0760  2F5D               	goto	u427
+   730                           
+   731                           ;xpall_switcher_main.c: 127: RA4 = 1;
+   732  0761  1283               	bcf	3,5	;RP0=0, select bank0
+   733  0762  1303               	bcf	3,6	;RP1=0, select bank0
+   734  0763  1605               	bsf	5,4	;volatile
+   735  0764  0008               	return
+   736  0765                     __end_of_set_mode:	
+   737                           
+   738                           	psect	text2
+   739  06A8                     __ptext2:	
+   740 ;; *************** function ___eetoc *****************
+   741 ;; Defined at:
+   742 ;;		line 48 in file "/opt/microchip/xc8/v1.34/sources/pic/eeprom.c"
+   743 ;; Parameters:    Size  Location     Type
+   744 ;;  addr            1    wreg     PTR eeprom void 
+   745 ;;		 -> power_on_mode(1), 
+   746 ;; Auto vars:     Size  Location     Type
+   747 ;;  addr            1    6[COMMON] PTR eeprom void 
+   748 ;;		 -> power_on_mode(1), 
+   749 ;;  data            1    7[COMMON] unsigned char 
+   750 ;; Return value:  Size  Location     Type
+   751 ;;                  1    wreg      unsigned char 
+   752 ;; Registers used:
+   753 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+   754 ;; Tracked objects:
+   755 ;;		On entry : 0/0
+   756 ;;		On exit  : 0/0
+   757 ;;		Unchanged: 0/0
+   758 ;; Data sizes:     COMMON   BANK0   BANK1
+   759 ;;      Params:         0       0       0
+   760 ;;      Locals:         2       0       0
+   761 ;;      Temps:          1       0       0
+   762 ;;      Totals:         3       0       0
+   763 ;;Total ram usage:        3 bytes
+   764 ;; Hardware stack levels used:    1
+   765 ;; Hardware stack levels required when called:    1
+   766 ;; This function calls:
+   767 ;;		_eecpymem
+   768 ;; This function is called by:
+   769 ;;		_main
+   770 ;; This function uses a non-reentrant model
+   771 ;;
+   772                           
+   773                           
+   774                           ;psect for function ___eetoc
+   775  06A8                     ___eetoc:	
+   776                           
+   777                           ;incstack = 0
+   778                           ; Regs used in ___eetoc: [wreg-fsr0h+status,2+status,0+pclath+cstack]
+   779                           ;___eetoc@addr stored from wreg
+   780  06A8  00F6               	movwf	___eetoc@addr
+   781  06A9  0876               	movf	___eetoc@addr,w
+   782  06AA  00F5               	movwf	??___eetoc
+   783  06AB  0875               	movf	??___eetoc,w
+   784  06AC  00F0               	movwf	eecpymem@from
+   785  06AD  01F1               	clrf	eecpymem@size
+   786  06AE  0AF1               	incf	eecpymem@size,f
+   787  06AF  3077               	movlw	(low (___eetoc@data| 0))& (0+255)
+   788  06B0  26C2               	fcall	_eecpymem
+   789  06B1  0877               	movf	___eetoc@data,w
+   790  06B2  0008               	return
+   791  06B3                     __end_of___eetoc:	
+   792                           
+   793                           	psect	text3
+   794  06C2                     __ptext3:	
+   795 ;; *************** function _eecpymem *****************
+   796 ;; Defined at:
+   797 ;;		line 6 in file "/opt/microchip/xc8/v1.34/sources/pic/eeprom.c"
+   798 ;; Parameters:    Size  Location     Type
+   799 ;;  to              1    wreg     PTR volatile unsigned ch
+   800 ;;		 -> __eetofl@data(3), __eetoft@data(3), __eetol@data(4), __eetom@data(3), 
+   801 ;;		 -> __eetoi@data(2), __eetoc@data(1), 
+   802 ;;  from            1    0[COMMON] PTR eeprom unsigned char
+   803 ;;		 -> power_on_mode(1), 
+   804 ;;  size            1    1[COMMON] unsigned char 
+   805 ;; Auto vars:     Size  Location     Type
+   806 ;;  to              1    4[COMMON] PTR volatile unsigned ch
+   807 ;;		 -> __eetofl@data(3), __eetoft@data(3), __eetol@data(4), __eetom@data(3), 
+   808 ;;		 -> __eetoi@data(2), __eetoc@data(1), 
+   809 ;;  cp              1    3[COMMON] PTR volatile unsigned ch
+   810 ;;		 -> __eetofl@data(3), __eetoft@data(3), __eetol@data(4), __eetom@data(3), 
+   811 ;;		 -> __eetoi@data(2), __eetoc@data(1), 
+   812 ;; Return value:  Size  Location     Type
+   813 ;;		None               void
+   814 ;; Registers used:
+   815 ;;		wreg, fsr0l, fsr0h, status,2, status,0
+   816 ;; Tracked objects:
+   817 ;;		On entry : 0/0
+   818 ;;		On exit  : 0/0
+   819 ;;		Unchanged: 0/0
+   820 ;; Data sizes:     COMMON   BANK0   BANK1
+   821 ;;      Params:         2       0       0
+   822 ;;      Locals:         2       0       0
+   823 ;;      Temps:          1       0       0
+   824 ;;      Totals:         5       0       0
+   825 ;;Total ram usage:        5 bytes
+   826 ;; Hardware stack levels used:    1
+   827 ;; This function calls:
+   828 ;;		Nothing
+   829 ;; This function is called by:
+   830 ;;		___eetoc
+   831 ;; This function uses a non-reentrant model
+   832 ;;
+   833                           
+   834                           
+   835                           ;psect for function _eecpymem
+   836  06C2                     _eecpymem:	
+   837                           
+   838                           ;incstack = 0
+   839                           ; Regs used in _eecpymem: [wreg-fsr0h+status,2+status,0]
+   840                           ;eecpymem@to stored from wreg
+   841  06C2  00F4               	movwf	eecpymem@to
+   842  06C3  0874               	movf	eecpymem@to,w
+   843  06C4  00F2               	movwf	??_eecpymem
+   844  06C5  0872               	movf	??_eecpymem,w
+   845  06C6  00F3               	movwf	eecpymem@cp
+   846  06C7                     l82:	
+   847  06C7  1683               	bsf	3,5	;RP0=1, select bank1
+   848  06C8  1303               	bcf	3,6	;RP1=0, select bank1
+   849  06C9  189C               	btfsc	28,1	;volsfr
+   850  06CA  2EC7               	goto	l82
+   851  06CB  0870               	movf	eecpymem@from,w
+   852  06CC  009B               	movwf	27	;volatile
+   853  06CD                     l653:	
+   854  06CD  3001               	movlw	1
+   855  06CE  02F1               	subwf	eecpymem@size,f
+   856  06CF  0A71               	incf	eecpymem@size,w
+   857  06D0  1903               	btfsc	3,2
+   858  06D1  0008               	return
+   859  06D2                     l87:	
+   860  06D2  189C               	btfsc	28,1	;volsfr
+   861  06D3  2ED2               	goto	l87
+   862  06D4  307F               	movlw	127
+   863  06D5  00F2               	movwf	??_eecpymem
+   864  06D6  0872               	movf	??_eecpymem,w
+   865  06D7  059C               	andwf	28,f	;volsfr
+   866  06D8  141C               	bsf	28,0	;volsfr
+   867  06D9  081A               	movf	26,w	;volatile
+   868  06DA  00F2               	movwf	??_eecpymem
+   869  06DB  0873               	movf	eecpymem@cp,w
+   870  06DC  0084               	movwf	4
+   871  06DD  0872               	movf	??_eecpymem,w
+   872  06DE  0080               	movwf	0
+   873  06DF  3001               	movlw	1
+   874  06E0  00F2               	movwf	??_eecpymem
+   875  06E1  0872               	movf	??_eecpymem,w
+   876  06E2  07F3               	addwf	eecpymem@cp,f
+   877  06E3  3001               	movlw	1
+   878  06E4  00F2               	movwf	??_eecpymem
+   879  06E5  0872               	movf	??_eecpymem,w
+   880  06E6  079B               	addwf	27,f	;volatile
+   881  06E7  2ECD               	goto	l653
+   882  06E8                     __end_of_eecpymem:	
+   883                           
+   884                           	psect	text4
+   885  069E                     __ptext4:	
+   886 ;; *************** function ___ctoee *****************
+   887 ;; Defined at:
+   888 ;;		line 80 in file "/opt/microchip/xc8/v1.34/sources/pic/eeprom.c"
+   889 ;; Parameters:    Size  Location     Type
+   890 ;;  addr            1    wreg     PTR eeprom void 
+   891 ;;		 -> power_on_mode(1), 
+   892 ;;  data            1    5[COMMON] unsigned char 
+   893 ;; Auto vars:     Size  Location     Type
+   894 ;;  addr            1    7[COMMON] PTR eeprom void 
+   895 ;;		 -> power_on_mode(1), 
+   896 ;; Return value:  Size  Location     Type
+   897 ;;                  1    wreg      unsigned char 
+   898 ;; Registers used:
+   899 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+   900 ;; Tracked objects:
+   901 ;;		On entry : 0/0
+   902 ;;		On exit  : 0/0
+   903 ;;		Unchanged: 0/0
+   904 ;; Data sizes:     COMMON   BANK0   BANK1
+   905 ;;      Params:         1       0       0
+   906 ;;      Locals:         1       0       0
+   907 ;;      Temps:          1       0       0
+   908 ;;      Totals:         3       0       0
+   909 ;;Total ram usage:        3 bytes
+   910 ;; Hardware stack levels used:    1
+   911 ;; Hardware stack levels required when called:    1
+   912 ;; This function calls:
+   913 ;;		_memcpyee
+   914 ;; This function is called by:
+   915 ;;		_main
+   916 ;; This function uses a non-reentrant model
+   917 ;;
+   918                           
+   919                           
+   920                           ;psect for function ___ctoee
+   921  069E                     ___ctoee:	
+   922                           
+   923                           ;incstack = 0
+   924                           ; Regs used in ___ctoee: [wreg-fsr0h+status,2+status,0+pclath+cstack]
+   925                           ;___ctoee@addr stored from wreg
+   926  069E  00F7               	movwf	___ctoee@addr
+   927  069F  3075               	movlw	(low (___ctoee@data| 0))& (0+255)
+   928  06A0  00F6               	movwf	??___ctoee
+   929  06A1  0876               	movf	??___ctoee,w
+   930  06A2  00F0               	movwf	memcpyee@from
+   931  06A3  01F1               	clrf	memcpyee@size
+   932  06A4  0AF1               	incf	memcpyee@size,f
+   933  06A5  0877               	movf	___ctoee@addr,w
+   934  06A6  26E8               	fcall	_memcpyee
+   935  06A7  0008               	return
+   936  06A8                     __end_of___ctoee:	
+   937                           ;	Return value of ___ctoee is never used
+   938                           
+   939                           
+   940                           	psect	text5
+   941  06E8                     __ptext5:	
+   942 ;; *************** function _memcpyee *****************
+   943 ;; Defined at:
+   944 ;;		line 24 in file "/opt/microchip/xc8/v1.34/sources/pic/eeprom.c"
+   945 ;; Parameters:    Size  Location     Type
+   946 ;;  to              1    wreg     PTR eeprom unsigned char
+   947 ;;		 -> power_on_mode(1), 
+   948 ;;  from            1    0[COMMON] PTR const unsigned char 
+   949 ;;		 -> __fltoee@data(3), __fttoee@data(3), __ltoee@data(4), __mtoee@data(3), 
+   950 ;;		 -> __itoee@data(2), __ctoee@data(1), 
+   951 ;;  size            1    1[COMMON] unsigned char 
+   952 ;; Auto vars:     Size  Location     Type
+   953 ;;  to              1    4[COMMON] PTR eeprom unsigned char
+   954 ;;		 -> power_on_mode(1), 
+   955 ;;  ptr             1    3[COMMON] PTR const unsigned char 
+   956 ;;		 -> __fltoee@data(3), __fttoee@data(3), __ltoee@data(4), __mtoee@data(3), 
+   957 ;;		 -> __itoee@data(2), __ctoee@data(1), 
+   958 ;; Return value:  Size  Location     Type
+   959 ;;		None               void
+   960 ;; Registers used:
+   961 ;;		wreg, fsr0l, fsr0h, status,2, status,0
+   962 ;; Tracked objects:
+   963 ;;		On entry : 0/0
+   964 ;;		On exit  : 0/0
+   965 ;;		Unchanged: 0/0
+   966 ;; Data sizes:     COMMON   BANK0   BANK1
+   967 ;;      Params:         2       0       0
+   968 ;;      Locals:         2       0       0
+   969 ;;      Temps:          1       0       0
+   970 ;;      Totals:         5       0       0
+   971 ;;Total ram usage:        5 bytes
+   972 ;; Hardware stack levels used:    1
+   973 ;; This function calls:
+   974 ;;		Nothing
+   975 ;; This function is called by:
+   976 ;;		___ctoee
+   977 ;; This function uses a non-reentrant model
+   978 ;;
+   979                           
+   980                           
+   981                           ;psect for function _memcpyee
+   982  06E8                     _memcpyee:	
+   983                           
+   984                           ;incstack = 0
+   985                           ; Regs used in _memcpyee: [wreg-fsr0h+status,2+status,0]
+   986                           ;memcpyee@to stored from wreg
+   987  06E8  00F4               	movwf	memcpyee@to
+   988  06E9  0870               	movf	memcpyee@from,w
+   989  06EA  00F2               	movwf	??_memcpyee
+   990  06EB  0872               	movf	??_memcpyee,w
+   991  06EC  00F3               	movwf	memcpyee@ptr
+   992  06ED                     l94:	
+   993  06ED  1683               	bsf	3,5	;RP0=1, select bank1
+   994  06EE  1303               	bcf	3,6	;RP1=0, select bank1
+   995  06EF  189C               	btfsc	28,1	;volsfr
+   996  06F0  2EED               	goto	l94
+   997  06F1  0874               	movf	memcpyee@to,w
+   998  06F2  3EFF               	addlw	255
+   999  06F3  009B               	movwf	27	;volatile
+  1000  06F4  307F               	movlw	127
+  1001  06F5  00F2               	movwf	??_memcpyee
+  1002  06F6  0872               	movf	??_memcpyee,w
+  1003  06F7  059C               	andwf	28,f	;volsfr
+  1004  06F8                     l681:	
+  1005  06F8  3001               	movlw	1
+  1006  06F9  02F1               	subwf	memcpyee@size,f
+  1007  06FA  0A71               	incf	memcpyee@size,w
+  1008  06FB  1903               	btfsc	3,2
+  1009  06FC  0008               	return
+  1010  06FD                     l99:	
+  1011  06FD  1683               	bsf	3,5	;RP0=1, select bank1
+  1012  06FE  1303               	bcf	3,6	;RP1=0, select bank1
+  1013  06FF  189C               	btfsc	28,1	;volsfr
+  1014  0700  2EFD               	goto	l99
+  1015  0701  0873               	movf	memcpyee@ptr,w
+  1016  0702  0084               	movwf	4
+  1017  0703  0800               	movf	0,w
+  1018  0704  009A               	movwf	26	;volatile
+  1019  0705  3001               	movlw	1
+  1020  0706  00F2               	movwf	??_memcpyee
+  1021  0707  0872               	movf	??_memcpyee,w
+  1022  0708  07F3               	addwf	memcpyee@ptr,f
+  1023  0709  3001               	movlw	1
+  1024  070A  00F2               	movwf	??_memcpyee
+  1025  070B  0872               	movf	??_memcpyee,w
+  1026  070C  079B               	addwf	27,f	;volatile
+  1027  070D  1283               	bcf	3,5	;RP0=0, select bank0
+  1028  070E  1303               	bcf	3,6	;RP1=0, select bank0
+  1029  070F  1003               	bcf	3,0	;volatile
+  1030  0710  1B8B               	btfsc	11,7	;volatile
+  1031  0711  1403               	bsf	3,0	;volatile
+  1032  0712  138B               	bcf	11,7	;volatile
+  1033  0713  1683               	bsf	3,5	;RP0=1, select bank1
+  1034  0714  1303               	bcf	3,6	;RP1=0, select bank1
+  1035  0715  151C               	bsf	28,2	;volsfr
+  1036  0716  3055               	movlw	85
+  1037  0717  009D               	movwf	29	;volsfr
+  1038  0718  30AA               	movlw	170
+  1039  0719  009D               	movwf	29	;volsfr
+  1040  071A  149C               	bsf	28,1	;volsfr
+  1041  071B  111C               	bcf	28,2	;volsfr
+  1042  071C  1283               	bcf	3,5	;RP0=0, select bank0
+  1043  071D  1303               	bcf	3,6	;RP1=0, select bank0
+  1044  071E  1C03               	btfss	3,0	;volatile
+  1045  071F  2EF8               	goto	l681
+  1046  0720  178B               	bsf	11,7	;volatile
+  1047  0721  2EF8               	goto	l681
+  1048  0722                     __end_of_memcpyee:	
+  1049  007E                     btemp	set	126	;btemp
+  1050  007E                     wtemp	set	126
+  1051  007E                     wtemp0	set	126
+  1052  0080                     wtemp1	set	128
+  1053  0082                     wtemp2	set	130
+  1054  0084                     wtemp3	set	132
+  1055  0086                     wtemp4	set	134
+  1056  0088                     wtemp5	set	136
+  1057  007F                     wtemp6	set	127
+  1058  007E                     ttemp	set	126
+  1059  007E                     ttemp0	set	126
+  1060  0081                     ttemp1	set	129
+  1061  0084                     ttemp2	set	132
+  1062  0087                     ttemp3	set	135
+  1063  007F                     ttemp4	set	127
+  1064  007E                     ltemp	set	126
+  1065  007E                     ltemp0	set	126
+  1066  0082                     ltemp1	set	130
+  1067  0086                     ltemp2	set	134
+  1068  0080                     ltemp3	set	128
+
+
+Data Sizes:
+    Strings     0
+    Constant    12
+    Data        53
+    BSS         8
+    Persistent  0
+    Stack       0
+
+Auto Spaces:
+    Space          Size  Autos    Used
+    COMMON           14      8      13
+    BANK0            80      8      10
+    BANK1            32      0       0
+
+Pointer List with Targets:
+
+    __ctoee@addr	PTR eeprom void  size(1) Largest target is 1
+		 -> power_on_mode(EEDATA[1]), 
+
+    __eetoc@addr	PTR eeprom void  size(1) Largest target is 1
+		 -> power_on_mode(EEDATA[1]), 
+
+    memcpyee@to	PTR eeprom unsigned char  size(1) Largest target is 1
+		 -> power_on_mode(EEDATA[1]), 
+
+    memcpyee@from	PTR const unsigned char  size(1) Largest target is 4
+		 -> __fltoee@data(COMMON[3]), __fttoee@data(COMMON[3]), __ltoee@data(COMMON[4]), __mtoee@data(COMMON[3]), 
+		 -> __itoee@data(COMMON[2]), __ctoee@data(COMMON[1]), 
+
+    memcpyee@ptr	PTR const unsigned char  size(1) Largest target is 4
+		 -> __fltoee@data(COMMON[3]), __fttoee@data(COMMON[3]), __ltoee@data(COMMON[4]), __mtoee@data(COMMON[3]), 
+		 -> __itoee@data(COMMON[2]), __ctoee@data(COMMON[1]), 
+
+    eecpymem@from	PTR eeprom unsigned char  size(1) Largest target is 1
+		 -> power_on_mode(EEDATA[1]), 
+
+    eecpymem@to	PTR volatile unsigned char  size(1) Largest target is 4
+		 -> __eetofl@data(COMMON[3]), __eetoft@data(COMMON[3]), __eetol@data(COMMON[4]), __eetom@data(COMMON[3]), 
+		 -> __eetoi@data(COMMON[2]), __eetoc@data(COMMON[1]), 
+
+    eecpymem@cp	PTR volatile unsigned char  size(1) Largest target is 4
+		 -> __eetofl@data(COMMON[3]), __eetoft@data(COMMON[3]), __eetol@data(COMMON[4]), __eetom@data(COMMON[3]), 
+		 -> __eetoi@data(COMMON[2]), __eetoc@data(COMMON[1]), 
+
+
+Critical Paths under _main in COMMON
+
+    _main->___ctoee
+    _main->___eetoc
+    ___eetoc->_eecpymem
+    ___ctoee->_memcpyee
+
+Critical Paths under _main in BANK0
+
+    None.
+
+Critical Paths under _main in BANK1
+
+    None.
+
+Call Graph Tables:
+
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (0) _main                                                 8     8      0    1901
+                                              0 BANK0      8     8      0
+                            ___ctoee
+                            ___eetoc
+                           _set_mode
+ ---------------------------------------------------------------------------------
+ (2) _set_mode                                             3     3      0     132
+                                              0 COMMON     3     3      0
+ ---------------------------------------------------------------------------------
+ (1) ___eetoc                                              3     3      0     880
+                                              5 COMMON     3     3      0
+                           _eecpymem
+ ---------------------------------------------------------------------------------
+ (2) _eecpymem                                             5     3      2     758
+                                              0 COMMON     5     3      2
+ ---------------------------------------------------------------------------------
+ (1) ___ctoee                                              3     2      1     889
+                                              5 COMMON     3     2      1
+                           _memcpyee
+ ---------------------------------------------------------------------------------
+ (2) _memcpyee                                             5     3      2     758
+                                              0 COMMON     5     3      2
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 2
+ ---------------------------------------------------------------------------------
+
+ Call Graph Graphs:
+
+ _main (ROOT)
+   ___ctoee
+     _memcpyee
+   ___eetoc
+     _eecpymem
+   _set_mode
+
+ Address spaces:
+Name               Size   Autos  Total    Cost      Usage
+SFR3                 0      0       0       4        0.0%
+BITSFR3              0      0       0       4        0.0%
+SFR2                 0      0       0       5        0.0%
+BITSFR2              0      0       0       5        0.0%
+BANK1               20      0       0       6        0.0%
+BITBANK1            20      0       0       5        0.0%
+SFR1                 0      0       0       2        0.0%
+BITSFR1              0      0       0       2        0.0%
+BANK0               50      8       A       4       12.5%
+BITBANK0            50      0       0       3        0.0%
+SFR0                 0      0       0       1        0.0%
+BITSFR0              0      0       0       1        0.0%
+COMMON               E      8       D       1       92.9%
+BITCOMMON            E      0       0       0        0.0%
+CODE                 0      0       0       0        0.0%
+DATA                 0      0      17       8        0.0%
+ABS                  0      0      17       7        0.0%
+NULL                 0      0       0       0        0.0%
+STACK                0      0       0       2        0.0%
+EEDATA             100      0      36       0       21.1%
+
+
+Microchip Technology PIC Macro Assembler V1.34 build -361300703 
+Symbol Table                                                                                   Mon Nov  9 20:38:18 2015
+
+                            pc 0002                    __CFG_CP$OFF 0000                             l40 0784  
+                           l82 06C7                             l94 06ED                             l87 06D2  
+                           l99 06FD                             _RD 04E0                             _WR 04E1  
+                           fsr 0004                            l721 077D                            l653 06CD  
+                          l733 07C8                            l735 07CA                            l681 06F8  
+                          l745 07E1                            l729 07BC                            l747 0791  
+                          l749 07E7                            _GIE 005F                            _RA2 002A  
+                          _RA4 002C                            _RA5 002D                            u305 0738  
+                          u335 0740                            u407 07E3                            u280 072F  
+                          u417 0752                   __CFG_CPD$OFF 0000                            u427 075D  
+                          u294 0732                            u397 078C                   ___ctoee@addr 0077  
+                 ___ctoee@data 0075                            fsr0 0004                            indf 0000  
+                         _WREN 04E2                           _main 0765                           btemp 007E  
+                  main@pressed 007C                    main@timeout 0028                           ltemp 007E  
+                         start 0000                           ttemp 007E                           wtemp 007E  
+                __CFG_IESO$OFF 0000                   main@debounce 0078                          ?_main 0070  
+              __end_of___eetoc 06B3                          _EEADR 009B                __end_of___ctoee 06A8  
+                __CFG_WDTE$OFF 0000                          _CARRY 0018                          _PORTA 0005  
+                        _PORTC 0007                          _TRISA 0085                          _TRISC 0087  
+               __CFG_FCMEN$OFF 0000                   main@old_mode 007B                  __CFG_WURE$OFF 0000  
+               __CFG_BOREN$OFF 0000                          pclath 000A                          ltemp0 007E  
+                        ltemp1 0082                          ltemp2 0086                          ltemp3 0080  
+                        ttemp0 007E                          ttemp1 0081                          ttemp2 0084  
+                        ttemp3 0087                          ttemp4 007F                          status 0003  
+                        wtemp0 007E                          wtemp1 0080                          wtemp2 0082  
+                        wtemp3 0084                          wtemp4 0086                          wtemp5 0088  
+                        wtemp6 007F                 __CFG_MCLRE$OFF 0000                __initialization 07F7  
+                 __end_of_main 07F7                         ??_main 0020                         _EEDATA 009A  
+                       _EECON1 009C                         _EECON2 009D                         _TRISA5 042D  
+               __CFG_PWRTE$OFF 0000               __end_of_eecpymem 06E8          set_mode@eeprom_select 0007  
+                    ??___eetoc 0075                      ??___ctoee 0076                    memcpyee@ptr 0073  
+             __end_of_memcpyee 0722                   __pdataEEDATA 0000               __end_of_set_mode 0765  
+      __end_of__initialization 07FE                 __pcstackCOMMON 0070                     __pbssBANK0 0028  
+                   __pmaintext 0765    __end_ofset_mode@mode_select 0013                      ?_eecpymem 0070  
+                   __stringtab 0001                      ?_memcpyee 0070                      ?_set_mode 0070  
+                      ___eetoc 06A8                        ___ctoee 069E                   memcpyee@from 0070  
+                      __ptext1 0722                        __ptext2 06A8                        __ptext3 06C2  
+                      __ptext4 069E                        __ptext5 06E8                   memcpyee@size 0071  
+                   ??_eecpymem 0072           end_of_initialization 07FE                     ??_memcpyee 0072  
+                   eecpymem@cp 0073                     eecpymem@to 0074                     ??_set_mode 0070  
+               set_mode@s_mode 0072                  __pidataEEDATA 0000            start_initialization 07F7  
+                   memcpyee@to 0074                     init_fetch0 06B3     __end_ofset_mode@led_select 000F  
+                  __pbssEEDATA 0035                    __pbssCOMMON 0078                      ___latbits 0000  
+                __pcstackBANK0 0020              __size_of_eecpymem 0026              __size_of_memcpyee 003A  
+                     ?___eetoc 0070                       ?___ctoee 0075              __size_of_set_mode 0043  
+                    __pstrings 0001                      _copyright 0000                    __stringbase 0006  
+                   _CMCON0bits 0019               __size_of___eetoc 000B               __size_of___ctoee 000A  
+           __end_of__stringtab 0007                   eecpymem@from 0070                       _eecpymem 06C2  
+                 eecpymem@size 0071  __end_ofset_mode@eeprom_select 000B                       _memcpyee 06E8  
+                __size_of_main 0092                       _set_mode 0722                       main@mode 007A  
+                     init_ram0 06B7             set_mode@led_select 000B            set_mode@mode_select 000F  
+                    stringcode 0001                       stringdir 0001                       stringtab 0001  
+           __CFG_FOSC$INTOSCIO 0000                  _power_on_mode 0035                   ___eetoc@addr 0076  
+                 ___eetoc@data 0077  
