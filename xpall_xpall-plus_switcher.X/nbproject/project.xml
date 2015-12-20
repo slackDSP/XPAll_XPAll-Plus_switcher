@@ -3,8 +3,8 @@
     <type>com.microchip.mplab.nbide.embedded.makeproject</type>
     <configuration>
         <data xmlns="http://www.netbeans.org/ns/make-project/1">
-            <name>xpall_switcher</name>
-            <creation-uuid>4bd9859e-02a0-4549-9257-1ee31ece08e8</creation-uuid>
+            <name>xpall_xpall-plus_switcher</name>
+            <creation-uuid>2d1743f7-f1ac-47e7-b264-db270fa2071f</creation-uuid>
             <make-project-type>0</make-project-type>
             <c-extensions>c</c-extensions>
             <cpp-extensions/>
