@@ -31,9 +31,9 @@
 #define blue 0b011
 #define yellow 0b100
 #define xp100 0b0001
-#define xp200 0b1110
-#define xp300 0b1010
-#define xp400 0b0100
+#define xp200 0b0100
+#define xp300 0b1000
+#define xp400 0b1100
 
 // CONFIG
 #pragma config FOSC = INTOSCIO  // Oscillator Selection bits (INTOSCIO oscillator: I/O function on RA4/T1G/OSC2/CLKOUT pin, I/O function on RA5/T1CKI/OSC1/CLKIN)
@@ -123,7 +123,7 @@ void set_mode(char s_mode) {
 
     __delay_ms(5);
     reset_out = 0;
-    __delay_ms(5);
+    __delay_ms(100);
     reset_out = 1;
 
 }
